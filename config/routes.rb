@@ -1,9 +1,4 @@
 GroupApp::Application.routes.draw do
- # get "group_app/home"
-  #get "group_app/help"
-  #get "group_app/about"
-  #get "group_app/contact"
-
   
   match '/help',    to: 'group_app#help'
   match '/about',   to: 'group_app#about'
