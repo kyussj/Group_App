@@ -1,9 +1,16 @@
 GroupApp::Application.routes.draw do
-  get "group_app/home"
-  get "group_app/help"
-  get "group_app/about"
-  get "group_app/contact"
+ # get "group_app/home"
+  #get "group_app/help"
+  #get "group_app/about"
+  #get "group_app/contact"
 
+  
+  match '/help',    to: 'group_app#help'
+  match '/about',   to: 'group_app#about'
+  match '/contact', to: 'group_app#contact'
+  
+  root to: 'group_app#home'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
