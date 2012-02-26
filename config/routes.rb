@@ -1,7 +1,8 @@
 GroupApp::Application.routes.draw do
   get "group_app/home"
-
   get "group_app/help"
+  get "group_app/about"
+  get "group_app/contact"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
