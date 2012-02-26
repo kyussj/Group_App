@@ -1,0 +1,3 @@
+== Group Application
+
+This is a group application created by Post Graduate students studying IT at the University of Aberdeen.
