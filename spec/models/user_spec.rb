@@ -78,6 +78,18 @@ describe User do
   describe "return value of authenticate method" do
     before { @user.save }
     let(:found_user) { User.find_by_email(@user.email) }
+end
 
+describe "User pages" do
+
+  subject { page }
+
+  describe "signup page" do
+    before { visit signup_path }
+
+    it { should have_selector('h1',    text: 'Sign up') }
+    it { should have_selector('title', text: 'Sign up') }
+  end
+end
  
 end
