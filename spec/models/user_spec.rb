@@ -10,7 +10,7 @@
 #
 
 require 'spec_helper'
-
+#Broken spec file! Fix with chapter 6
 describe User do
 
   before do
