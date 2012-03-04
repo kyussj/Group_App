@@ -1,5 +1,5 @@
 $full-width: 910px;
-$background-color: 	#33CCFF;
+$background-color: #cff;
 $link-color: #09c;
 $visited-link-color: #069;
 
@@ -8,14 +8,16 @@ $visited-link-color: #069;
 }
 
 body {
-  background: $background-color;}
+  background: $background-color;
+}
 
 header {
   padding-top: 20px;
 
   img {
     padding: 1em;
-    background: white;}
+    background: white;
+  }
 }
 
 section {
@@ -87,7 +89,7 @@ a.signup_button {
   text-align: center;
   width: 190px;
   color: white;
-  background: #FF0000;
+  background: #006400;
   font-size: 150%;
   font-weight: bold;
   padding: 20px;
@@ -96,9 +98,9 @@ a.signup_button {
 /* Round corners */
 
 .round {
-  -moz-border-radius:    10px;
+  -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
-  border-radius:         10px;
+  border-radius: 10px;
 }
 
 footer {
