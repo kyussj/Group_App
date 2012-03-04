@@ -1,4 +1,17 @@
 <% provide(:title, 'Home') %>
+<% if signed_in? %>
+  <table class="front">
+    <tr>
+      <td class="main">
+        <h1 class="posting">What's up?</h1>
+        <%= render 'shared/posting_form' %>
+      </td>
+      <td class="sidebar round">
+        <%= render 'shared/user_info' %>
+      </td>
+    </tr>
+  </table>
+  <% else %>
 <h1>Group App</h1>
 <p>
   This is the home page for the
@@ -7,3 +20,4 @@
 </p>
 
 <%= link_to "Sign up now!", signup_path, class: "signup_button round" %>
+<% end %>
