@@ -4,7 +4,7 @@ describe Posting do
   let(:user) { FactoryGirl.create(:user) }
   before do
     # WARNING!! This code is wrong!
-    @posting = Posting.new(content: "Lorem ipsum", user_id: user.id)
+    @posting = Posting.new(content: "Woot", user_id: user.id)
   end
 
   subject { @posting }
