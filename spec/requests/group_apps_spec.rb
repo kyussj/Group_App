@@ -4,6 +4,18 @@ describe "Group App" do
 
   let(:base_title) { "Group App" }
   
+  
+  subject { page }
+
+  describe "Home page" do
+    before { visit root_path } 
+
+    it { should have_selector('h1', text: 'Group App') }
+    it { should have_selector 'title',
+                        text: "Group App | Home" }
+  end
+  
+  
   describe "Help page" do
 
     it "should have the content 'Help'" do
