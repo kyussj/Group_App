@@ -1,14 +1,16 @@
 GroupApp::Application.routes.draw do
 resources :users
 resources :sessions, only: [:new, :create, :destroy]
+resources :postings, only: [:create, :destroy]
 
   match '/signup',  to: 'users#new'
+  match '/edit',    to: 'users#edit'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
-  match '/signup',  to: 'users#new'
   match '/help',    to: 'group_app#help'
   match '/about',   to: 'group_app#about'
   match '/contact', to: 'group_app#contact'
+  match '/index',   to: 'users#index' 
   
   root to: 'group_app#home'
   

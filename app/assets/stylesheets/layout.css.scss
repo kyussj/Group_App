@@ -1,5 +1,5 @@
-$full-width: 710px;
-$background-color: #cff;
+$full-width: 910px;
+$background-color: 	#33CCFF;
 $link-color: #09c;
 $visited-link-color: #069;
 
@@ -8,22 +8,20 @@ $visited-link-color: #069;
 }
 
 body {
-  background: $background-color;
-}
+  background: $background-color;}
 
 header {
   padding-top: 20px;
 
   img {
     padding: 1em;
-    background: white;
-  }
+    background: white;}
 }
 
 section {
   margin-top: 1em;
   font-size: 120%;
-  padding: 20px;
+  padding: 50px;
   background: white;
 
   h1 {
@@ -89,11 +87,13 @@ a.signup_button {
   text-align: center;
   width: 190px;
   color: white;
-  background: #006400;
+  background: #FF0000;
   font-size: 150%;
   font-weight: bold;
   padding: 20px;
 }
+
+
 
 /* Round corners */
 
@@ -103,6 +103,7 @@ a.signup_button {
   border-radius:         10px;
 }
 
+/* footer */
 footer {
   text-align: center;
   margin-top: 10px;
@@ -186,4 +187,66 @@ div.field, div.actions {
 
 div.field, div.actions {
   margin-bottom: 10px;
+}
+
+ul.users {
+  margin-top: 1em;
+  li {
+    list-style: none;
+  }
+}
+
+/* This is for User posting */
+
+h1.posting {
+  margin-bottom: .3em;
+}
+
+table.postings {
+  margin-top: 1em;
+
+  tr {
+    height: 70px;
+
+    &:nth-child(2n) td, tbody tr.even td {
+      background: white
+    }
+
+    td.posting {
+      border-top: 1px solid #ccc;
+      vertical-align: top;
+      padding-top: 10px;
+
+      span.timestamp {
+        display: block;
+        font-size: 85%;
+        color: #666;
+      }
+    }
+  }
+}
+
+div.user_info {
+  img {
+    padding-right: 0.1em;
+  }
+  a {
+    text-decoration: none;
+  }
+  span.user_name {
+
+  }
+  
+  span.postings {
+    font-size: 80%;
+  }
+}
+
+form.new_posting {
+  margin-bottom: 2em;
+
+  textarea {
+    height: 4em;
+    margin-bottom: 0;
+  }
 }

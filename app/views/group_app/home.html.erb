@@ -1,9 +1,35 @@
 <% provide(:title, 'Home') %>
+<% if signed_in? %>
+  <table class="front">
+    <tr>
+      <td class="main">
+        <h1 class="posting">Whatup brodog?</h1>
+        <%= render 'shared/posting_form' %>
+      </td>
+      <td class="sidebar round">
+        <%= render 'shared/user_info' %>
+      </td>
+    </tr>
+  </table>
+  <% else %>
 <h1>Group App</h1>
 <p>
   This is the home page for the
   <a href="http://www.abdn.ac.uk/index.php">Aberdeen University</a>
    AWAD group application.
 </p>
-
 <%= link_to "Sign up now!", signup_path, class: "signup_button round" %>
+
+<div class='spread'>  
+<div class='twshare left'> 
+  <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="funonrails">Tweet</a>
+  <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> 
+  </div>
+  <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+  <fb:like href="" layout="button_count" show_faces="false" width="450" font="">
+  </fb:like>
+  </div>
+
+<% end %>
+
+

@@ -2,27 +2,58 @@ require 'spec_helper'
 
 describe "Group App" do
 
-  describe "Home Page" do
+  let(:base_title) { "Group App" }
+  
+  
+  subject { page }
 
-    it "should have the content 'Group App'" do
-      visit '/group_app/home'
-      page.should have_content('Group App')
-    end
+  describe "Home page" do
+    before { visit root_path } 
+
+    it { should have_selector('h1', text: 'Group App') }
+    it { should have_selector 'title',
+                        text: "Group App | Home" }
   end
-
+  
+  
   describe "Help page" do
 
     it "should have the content 'Help'" do
-      visit '/group_app/help'
+      visit '/help'
       page.should have_content('Help')
     end
-  end
+ 
+    it "should have the title 'Help'" do
+      visit '/help'
+      page.should have_selector('title', :text => "#{base_title} | Help")
+    end
+	end
 
+  
   describe "About page" do
 
     it "should have the content 'About Us'" do
-      visit '/group_app/about'
+      visit '/about'
       page.should have_content('About Us')
     end
-  end
+ 
+  
+    it "should have the title 'About'" do
+      visit '/about'
+      page.should have_selector('title', :text => "#{base_title} | About")
+    end
+   end
+  
+    describe "Contact page" do
+
+    it "should have the h1 'Contact Us'" do
+      visit '/contact'
+      page.should have_selector('h1', :text => 'Contact Us')
+    end
+	
+	    it "should have the title 'Contact Us'" do
+      visit '/contact'
+      page.should have_selector('title', :text => "#{base_title} | Contact Us")
+    end
+   end
 end
