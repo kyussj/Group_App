@@ -12,4 +12,4 @@ I was thinking we could use this readme file to leave each other messages about 
 * Users now have a feed when they sign into the home page
 * Allowed users to delete their posts
 * Fixed tests for Users and Posting
-* Allowed admin to users to delete other users
+* Allowed admin users ability to delete other users
