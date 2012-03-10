@@ -16,3 +16,8 @@ I was thinking we could use this readme file to leave each other messages about 
 * Finished 30 tests, all should pass
 * Users can now follow and unfollow other users
 * Added some more tests (that fail obviously. Might remove them)
+
+== NOTE
+We should probably decide on what our app actually does. I've completed all the parts to the tutorial so we should focus upon
+filling the pages with actual content and images. There are still heaps of tests to do revolved around following/unfollowing users which I couldn't get working 
+but we can delete them if necessary. 
