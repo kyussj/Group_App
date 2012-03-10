@@ -6,3 +6,19 @@
     </span>
   </td>
 </tr>
+
+<tr>
+  <td class="posting">
+    <span class="content"><%= posting.content %></span>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(posting.created_at) %> ago.
+    </span>
+  </td>
+  <% if current_user?(posting.user) %>
+    <td>
+      <%= link_to "delete", posting, method: :delete,
+                                       confirm: "You sure?",
+                                       title: posting.content %>
+    </td>
+  <% end %>
+</tr>
