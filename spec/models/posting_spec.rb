@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Posting do
 
   let(:user) { FactoryGirl.create(:user) }
-  before { @posting = user.postings.build(content: "Lorem ipsum") }
+  before { @posting = user.postings.build(content: "Bob is awesome") }
 
   subject { @posting }
 
