@@ -13,3 +13,4 @@ I was thinking we could use this readme file to leave each other messages about 
 * Allowed users to delete their posts
 * Fixed tests for Users and Posting
 * Allowed admin users ability to delete other users
+* Finished 30 tests, all should pass
