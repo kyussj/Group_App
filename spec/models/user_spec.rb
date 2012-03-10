@@ -10,7 +10,7 @@
 #
 
 require 'spec_helper'
-#Broken spec file! Fix with chapter 6
+
 describe User do
 
   before do
@@ -26,7 +26,6 @@ describe User do
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
   
-  it { should be_valid }
 
       describe "when password is not present" do
     before { @user.password = @user.password_confirmation = " " }
@@ -78,18 +77,6 @@ describe User do
   describe "return value of authenticate method" do
     before { @user.save }
     let(:found_user) { User.find_by_email(@user.email) }
-end
-
-describe "User pages" do
-
-  subject { page }
-
-  describe "signup page" do
-    before { visit signup_path }
-
-    it { should have_selector('h1',    text: 'Sign up') }
-    it { should have_selector('title', text: 'Sign up') }
-  end
 end
  
 end
