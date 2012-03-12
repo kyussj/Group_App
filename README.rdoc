@@ -6,6 +6,16 @@ Attention!
 
 I was thinking we could use this readme file to leave each other messages about what we change or problems we run in to etc.
 
+12th March
+* Improved the Group_Apps_Spec file by re-writing some of the tests to shorten length and improve readability
+* Improved the User_Pages_Spec file
+* Removed and Added some tests to User_Spec.rb
+* Updated logo
+* Heroku app now 100% works even for siging up and signing in. 
+
+11th March
+* Fixed some tests, 39 should pass now but need more
+
 10th March
 
 * Edited the home page back to original text, was causing a failing test!
@@ -17,15 +27,23 @@ I was thinking we could use this readme file to leave each other messages about 
 * Users can now follow and unfollow other users
 * Added some more tests (that fail obviously. Might remove them)
 
-11th March
-* Fixed some tests, 39 should pass now but need more
+1st March 
 
-12th March
-* Improved the Group_Apps_Spec file by re-writing some of the tests to shorten length and improve readability
-* Improved the User_Pages_Spec file
-* Removed and Added some tests to User_Spec.rb
-* Updated logo
-* Heroku app now 100% works even for siging up and signing in. 
+* Improved testing
+* Improved layout 
+
+28th February
+
+* Allow users to sign in
+* Allow users to edit their profiles
+* Improved testing and added new tests
+
+27th February 
+
+* Began project
+* Added home, help, contact and about us pages
+* Changed layout
+* Started testing
 
 == Passing tests
  43 passing tests
