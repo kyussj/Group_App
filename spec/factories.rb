@@ -14,3 +14,5 @@ FactoryGirl.define do
     user
   end
 end
+
+#Coded by Jack
