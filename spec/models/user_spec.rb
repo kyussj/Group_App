@@ -10,7 +10,7 @@
 #
 
 require 'spec_helper'
-
+#Coded by Jack and Nabi
 describe User do
 
   before do
@@ -27,8 +27,8 @@ describe User do
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:feed) }
   it { should respond_to(:relationships) }
-
-      describe "when password is not present" do
+  
+   describe "when password is not present" do
     before { @user.password = @user.password_confirmation = " " }
     it { should_not be_valid }
   end
@@ -42,11 +42,13 @@ describe User do
     before { @user.name = " " }
     it { should_not be_valid }
 	end
+	
 	 describe "when email is not present" do
     before { @user.email = " " }
     it { should_not be_valid }
 	end
-	 describe "when name is too long" do
+	
+  describe "when name is too long" do
     before { @user.name = "a" * 41 }
     it { should_not be_valid }
   end
