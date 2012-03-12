@@ -1,9 +1,8 @@
 require 'spec_helper'
-
+#Coded by Jack
 describe "Group App" do
 
   let(:base_title) { "Group App" }
-  
   
   subject { page }
 
@@ -17,43 +16,30 @@ describe "Group App" do
   
   
   describe "Help page" do
-
-    it "should have the content 'Help'" do
-      visit '/help'
-      page.should have_content('Help')
-    end
- 
-    it "should have the title 'Help'" do
-      visit '/help'
-      page.should have_selector('title', :text => "#{base_title} | Help")
-    end
-	end
-
+    before { visit '/help' } 
+	
+	
+    it { should have_selector('h1', text: 'Help') }
+    it { should have_selector 'title',
+                        text: "Group App | Help" }
+  end
   
   describe "About page" do
-
-    it "should have the content 'About Us'" do
-      visit '/about'
-      page.should have_content('About Us')
-    end
- 
-  
-    it "should have the title 'About'" do
-      visit '/about'
-      page.should have_selector('title', :text => "#{base_title} | About")
-    end
-   end
-  
-    describe "Contact page" do
-
-    it "should have the h1 'Contact Us'" do
-      visit '/contact'
-      page.should have_selector('h1', :text => 'Contact Us')
-    end
+    before { visit '/about' } 
 	
-	    it "should have the title 'Contact Us'" do
-      visit '/contact'
-      page.should have_selector('title', :text => "#{base_title} | Contact Us")
-    end
-   end
+	
+    it { should have_selector('h1', text: 'About') }
+    it { should have_selector 'title',
+                        text: "Group App | About" }
+  end
+
+    describe "Contact page" do
+    before { visit '/contact' } 
+	
+	
+    it { should have_selector('h1', text: 'Contact Us') }
+    it { should have_selector 'title',
+                        text: "Group App | Contact Us" }
+  end
+ 
 end
