@@ -10,7 +10,7 @@
 #
 
 require 'spec_helper'
-#Coded by Jack and Nabi
+#Coded by Paul, Jack and Nabi
 describe User do
 
   before do
@@ -31,47 +31,45 @@ describe User do
    describe "when password is not present" do
     before { @user.password = @user.password_confirmation = " " }
     it { should_not be_valid }
-  end
+    end
 
   describe "when password doesn't match confirmation" do
     before { @user.password_confirmation = "mismatch" }
     it { should_not be_valid }
-  end
+    end
   
-  describe "when name is not present" do
+  describe "when name is not entered" do
     before { @user.name = " " }
     it { should_not be_valid }
 	end
-	
-	 describe "when email is not present" do
+
+  describe "when email is not entered" do
     before { @user.email = " " }
     it { should_not be_valid }
 	end
 	
-  describe "when name is too long" do
-    before { @user.name = "a" * 41 }
+  describe "when name is faaaaaaaaar too long" do
+    before { @user.name = "a" * 70 }
     it { should_not be_valid }
-  end
+    end
  
   describe "when email address is already taken" do
     before do
       user_with_same_email = @user.dup
+	  user_with_same_email.email = @user.email.upcase
       user_with_same_email.save
     end
-
-    it { should_not be_valid }
+	    it { should_not be_valid }
+    end
+  
+   describe "when email format is incorrect" do
+    invalid_addresses =  %w[user@fake,com user_at_fake.org example.user@fake.]
+    invalid_addresses.each do |invalid_address|
+      before { @user.email = invalid_address }
+      it { should_not be_valid }
+    end
   end
  
-   describe "when email address is already taken" do
-    before do
-      user_with_same_email = @user.dup
-      user_with_same_email.email = @user.email.upcase
-      user_with_same_email.save
-    end
-
-    it { should_not be_valid }
-  end
-  
   describe "with a password that's too short" do
     before { @user.password = @user.password_confirmation = "a" * 5 }
     it { should be_invalid }

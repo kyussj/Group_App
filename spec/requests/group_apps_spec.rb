@@ -1,5 +1,5 @@
 require 'spec_helper'
-#Coded by Jack
+#Coded by Jack and Nabi
 describe "Group App" do
 
   let(:base_title) { "Group App" }

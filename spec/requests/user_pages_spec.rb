@@ -1,5 +1,5 @@
 require 'spec_helper'
-
+#Coded by Jack
 describe "User pages" do
 
   subject { page }
