@@ -24,6 +24,11 @@ I was thinking we could use this readme file to leave each other messages about 
 * Improved the Group_Apps_Spec file by re-writing some of the tests to shorten length and improve readability
 * Improved the User_Pages_Spec file
 * Removed and Added some tests to User_Spec.rb
+* Updated logo
+* Heroku app now 100% works even for siging up and signing in. 
+
+== Passing tests
+ 43 passing tests
 
 == NOTE
 We should probably decide on what our app actually does. I've completed all the parts to the tutorial so we should focus upon
