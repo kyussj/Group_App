@@ -1,4 +1,4 @@
-# Step Definition
+# Coded by Jack
 
 Given /^a user visits the signin page$/ do
   visit signin_path
@@ -28,6 +28,6 @@ Then /^he should see his profile page$/ do
   page.should have_selector('title', text: @user.name)
 end
 
-Then /^he should see a signout link$/ do
-  page.should have_link('Sign out', href: signout_path)
+Then /^he should see a log out link$/ do
+  page.should have_link('Log out', href: signout_path)
 end
