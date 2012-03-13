@@ -16,7 +16,7 @@ describe "User pages" do
 
     before { visit signup_path }
 
-    describe "with legit info" do
+    describe "with non-legit info" do
       it "should not create a user" do
         expect { click_button "Sign up" }.not_to change(User, :count)
       end
