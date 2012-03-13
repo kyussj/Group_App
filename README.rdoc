@@ -1,8 +1,8 @@
-13th March
-
-Hey guys i've finally got my laptop sorted.
 == Group Application
 
+== Passing tests
+ 47 passing tests
+ 
 This is a group application created by Post Graduate students studying IT at the University of Aberdeen.
 
 Attention! 
@@ -64,11 +64,3 @@ I was thinking we could use this readme file to leave each other messages about 
 * Changed layout
 * Started testing
 * Began pushing to Heroku
-
-== Passing tests
- 47 passing tests
-
-== NOTE
-We should probably decide on what our app actually does. I've completed all the parts to the tutorial so we should focus upon
-filling the pages with actual content and images. There are still heaps of tests to do revolved around following/unfollowing users which I couldn't get working 
-but we can delete them if necessary. 
