@@ -9,7 +9,7 @@ describe "Group App" do
   describe "Home page" do
     before { visit root_path } 
 
-    it { should have_selector('h1', text: 'Team Alpha') }
+    it { should have_selector('h1', text: 'Welcome!') }
     it { should have_selector 'title',
                         text: "Group App | Home" }
   end
