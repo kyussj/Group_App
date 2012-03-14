@@ -15,7 +15,7 @@ describe User do
 
   before do
     @user = User.new(name: "Example User", email: "user@example.com", 
-                     password: "disco", password_confirmation: "disco")
+                     password: "discos", password_confirmation: "discos")
   end
 
   subject { @user }
@@ -25,8 +25,8 @@ describe User do
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
-  it { should respond_to(:feed) }
-  it { should respond_to(:relationships) }
+  it { should respond_to(:remember_token) }
+  it { should respond_to(:authenticate) } 
   
    describe "when password is not present" do
     before { @user.password = @user.password_confirmation = " " }
@@ -88,5 +88,10 @@ describe User do
   describe "return value of authenticate method" do
     before { @user.save }
     let(:found_user) { User.find_by_email(@user.email) }
+  end
+  
+  describe "remember token" do
+    before { @user.save }
+    its(:remember_token) { should_not be_blank }
   end
 end
