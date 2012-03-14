@@ -1,5 +1,5 @@
 require 'spec_helper'
-
+#Coded by Jack
 describe Posting do
 
   let(:user) { FactoryGirl.create(:user) }

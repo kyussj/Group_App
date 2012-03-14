@@ -1,5 +1,5 @@
 require 'spec_helper'
-
+#Coded by Jack and Nabi
 describe Relationship do
   let(:follower) { FactoryGirl.create(:user) }
   let(:followed) { FactoryGirl.create(:user) }

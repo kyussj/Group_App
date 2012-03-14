@@ -2,7 +2,7 @@
 This is a group application created by Post Graduate students studying IT at the University of Aberdeen.
 
 == Passing tests
- 54 passing Rspec tests and 8 Cucumber Tests
+ 54 passing Rspec and 8 Cucumber Tests
  
 == Attention! 
 
@@ -13,6 +13,8 @@ I was thinking we could use this readme file to leave each other messages about 
 14th March
 * Fixed some tests in User_Spec and Authentication_pages_spec.rb
 * Edited layout
+* Removed two useless tests
+* Changed Log in/Log out back to Sign in/Sign out - Was causing failing tests and did not match the routes which may lead to confusion
 
 13th March
 * Filled out the 'about' page
