@@ -2,7 +2,7 @@
 This is a group application created by Post Graduate students studying IT at the University of Aberdeen.
 
 == Passing tests
- 62 passing Rspec and 8 Cucumber Tests
+ 66 passing Rspec and 8 Cucumber Tests
  
 == Attention! 
 

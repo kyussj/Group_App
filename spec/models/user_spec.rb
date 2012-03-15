@@ -2,11 +2,11 @@
 #
 # Table name: users
 #
-#  id         :integer         not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
+# id :integer not null, primary key
+# name :string(255)
+# email :string(255)
+# created_at :datetime not null
+# updated_at :datetime not null
 #
 
 require 'spec_helper'
@@ -14,7 +14,7 @@ require 'spec_helper'
 describe User do
 
   before do
-    @user = User.new(name: "Example User", email: "user@example.com", 
+    @user = User.new(name: "Example User", email: "user@example.com",
                      password: "discos", password_confirmation: "discos")
   end
 
@@ -26,15 +26,16 @@ describe User do
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:remember_token) }
-  it { should respond_to(:authenticate) } 
+  it { should respond_to(:authenticate) }
   it { should respond_to(:postings) }
+  it { should respond_to(:feed) }
   
    describe "when password is not present" do
     before { @user.password = @user.password_confirmation = " " }
     it { should_not be_valid }
     end
 
-  describe "when password doesn't match confirmation" do
+  describe "when password does not match confirmation" do
     before { @user.password_confirmation = "mismatch" }
     it { should_not be_valid }
     end
@@ -42,13 +43,13 @@ describe User do
   describe "when name is not entered" do
     before { @user.name = " " }
     it { should_not be_valid }
-	end
+    end
 
   describe "when email is not entered" do
     before { @user.email = " " }
     it { should_not be_valid }
 	end
-	
+
   describe "when name is faaaaaaaaar too long" do
     before { @user.name = "a" * 70 }
     it { should_not be_valid }
@@ -60,11 +61,11 @@ describe User do
 	  user_with_same_email.email = @user.email.upcase
       user_with_same_email.save
     end
-	    it { should_not be_valid }
+	it { should_not be_valid }
     end
   
    describe "when email format is incorrect" do
-    invalid_addresses =  %w[user@fake,com user_at_fake.org example.user@fake.]
+    invalid_addresses = %w[user@fake,com user_at_fake.org example.user@fake.]
     invalid_addresses.each do |invalid_address|
       before { @user.email = invalid_address }
       it { should_not be_valid }
@@ -97,8 +98,8 @@ describe User do
   end
   
   describe "Posting associations" do
-	before { @user.save }
-    let!(:older_posting) do 
+before { @user.save }
+    let!(:older_posting) do
       FactoryGirl.create(:posting, user: @user, created_at: 1.day.ago)
   end
     let!(:newer_posting) do
@@ -108,13 +109,35 @@ describe User do
   it "should have the right postings in the right order" do
       @user.postings.should == [newer_posting, older_posting]
   end
-	
+
   it "should destroy associated postings" do
       postings = @user.postings
       @user.destroy
       postings.each do |posting|
         Posting.find_by_id(posting.id).should be_nil
       end
+    end
+  end
+   
+  describe "posting associations" do
+
+    before { @user.save }
+    let!(:older_posting) do 
+      FactoryGirl.create(:posting, user: @user, created_at: 1.day.ago)
+   end
+	
+   let!(:newer_posting) do
+      FactoryGirl.create(:posting, user: @user, created_at: 1.hour.ago)
+   end
+
+   describe "status" do
+      let(:unfollowed_post) do
+        FactoryGirl.create(:posting, user: FactoryGirl.create(:user))
+    end
+
+      its(:feed) { should include(newer_posting) }
+      its(:feed) { should include(older_posting) }
+      its(:feed) { should_not include(unfollowed_post) }
     end
   end
 end
