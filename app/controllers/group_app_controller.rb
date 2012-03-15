@@ -1,4 +1,5 @@
 class GroupAppController < ApplicationController
+#Coded by Jack/Nabi
   def home
     if signed_in?
       @posting  = current_user.postings.build

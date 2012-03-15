@@ -1,4 +1,5 @@
 class Posting < ActiveRecord::Base
+#Coded by Paul, Jack and Nabi
  attr_accessible :content
  
  validates :user_id, presence: true

@@ -1,4 +1,5 @@
 class Relationship < ActiveRecord::Base
+#Coded by Jack
 attr_accessible :followed_id
 
   belongs_to :follower, class_name: "User"
