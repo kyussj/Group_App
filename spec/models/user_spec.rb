@@ -27,6 +27,7 @@ describe User do
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) } 
+  it { should respond_to(:postings) }
   
    describe "when password is not present" do
     before { @user.password = @user.password_confirmation = " " }
@@ -75,7 +76,7 @@ describe User do
   it { should_not be_valid }
   end
 
-  describe "with a password that's too short" do
+  describe "with a password that's too shrt" do
     before { @user.password = @user.password_confirmation = "a" * 3 }
     it { should be_invalid }
   end
@@ -93,5 +94,27 @@ describe User do
   describe "remember token" do
     before { @user.save }
     its(:remember_token) { should_not be_blank }
+  end
+  
+  describe "Posting associations" do
+	before { @user.save }
+    let!(:older_posting) do 
+      FactoryGirl.create(:posting, user: @user, created_at: 1.day.ago)
+  end
+    let!(:newer_posting) do
+      FactoryGirl.create(:posting, user: @user, created_at: 1.hour.ago)
+  end
+
+  it "should have the right postings in the right order" do
+      @user.postings.should == [newer_posting, older_posting]
+  end
+	
+  it "should destroy associated postings" do
+      postings = @user.postings
+      @user.destroy
+      postings.each do |posting|
+        Posting.find_by_id(posting.id).should be_nil
+      end
+    end
   end
 end

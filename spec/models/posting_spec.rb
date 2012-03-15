@@ -18,4 +18,14 @@ describe Posting do
     before { @posting.user_id = nil }
     it { should_not be_valid }
   end
+  
+   describe "with blank content" do
+    before { @posting.content = " " }
+    it { should_not be_valid }
+  end
+
+  describe "with message is far too long" do
+    before { @posting.content = "a" * 200 }
+    it { should_not be_valid }
+  end
 end

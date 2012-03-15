@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :user do
     sequence(:name)  { |n| "Person #{n}" }
     sequence(:email) { |n| "person_#{n}@example.com"}   
-    password "foobar"
+    password "password"
 
     factory :admin do
       admin true
@@ -10,7 +10,7 @@ FactoryGirl.define do
   end
 
   factory :posting do
-    content "Lorem ipsum"
+    content "Bob is Awesome!"
     user
   end
 end

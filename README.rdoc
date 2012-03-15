@@ -2,13 +2,17 @@
 This is a group application created by Post Graduate students studying IT at the University of Aberdeen.
 
 == Passing tests
- 55 passing Rspec and 8 Cucumber Tests
+ 62 passing Rspec and 8 Cucumber Tests
  
 == Attention! 
 
 I was thinking we could use this readme file to leave each other messages about what we change or problems we run in to etc.
 
 == Log
+
+15th March
+* Fixed some tests in user_spec.rb and posting_spec.rb
+* Added test to posting_spec
 
 14th March
 * Fixed some tests in User_Spec and Authentication_pages_spec.rb
