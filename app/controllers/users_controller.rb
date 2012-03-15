@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     before_filter :signed_in_user, only: [:index, :edit, :update]
 	before_filter :correct_user,   only: [:edit, :update]
 	before_filter :admin_user,     only: :destroy
-	#Coded by Jack and Paul
+	#Coded by Nabi and Jack
 	
   def index
     @users = User.paginate(page: params[:page])
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the App!"
+      flash[:success] = "Welcome to ChatterBox!"
       redirect_to @user
     else
       render 'new'
