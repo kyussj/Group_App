@@ -13,6 +13,8 @@ I was thinking we could use this readme file to leave each other messages about 
 15th March
 * Fixed some tests in user_spec.rb and posting_spec.rb
 * Added test to posting_spec
+* Added comments to some code to shown who worked on what
+* Fixed title for posting
 
 14th March
 * Fixed some tests in User_Spec and Authentication_pages_spec.rb
